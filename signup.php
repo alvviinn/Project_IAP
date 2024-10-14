@@ -9,7 +9,7 @@ class User {
 
     // Create a new user
     public function create($fullname, $email, $username, $password, $genderId, $roleId) {
-        $query = "INSERT INTO " . $this->table_name . " (fullname, email, username, password, genderId, roleId, created, updated) 
+        $query = "INSERT INTO " . $this->users . " (fullname, email, username, password, genderId, roleId, created, updated) 
                   VALUES (:fullname, :email, :username, :password, :genderId, :roleId, NOW(), NOW())";
         
         $stmt = $this->conn->prepare($query);
@@ -27,7 +27,7 @@ class User {
 // Database connection
 class Database {
     private $host = "localhost";
-    private $db_name = "your_db";
+    private $db_name = "ics_e";
     private $username = "root";
     private $password = "";
     public $conn;

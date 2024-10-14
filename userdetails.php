@@ -8,7 +8,7 @@ class User {
     }
 
     public function readAll() {
-        $query = "SELECT userId, fullname, email, username, genderId, roleId, created, updated FROM " . $this->table_name;
+        $query = "SELECT userId, fullname, email, username, genderId, roleId, created, updated FROM " . $this-> users;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
